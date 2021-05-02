@@ -1,6 +1,7 @@
 "use strict";
 
 console.log('app.js is running');
+//babel src/app.js --out-file=public/scripts/app.js --presets="env,react" --watch
 
 var app = {
   title: "indecision app",
@@ -28,6 +29,8 @@ var onformsubmit = function onformsubmit(e) {
 };
 
 var appRoot = document.getElementById('app');
+
+var numbers = [55, 101, 1000];
 
 var renderoptionsapp = function renderoptionsapp() {
 
@@ -59,6 +62,14 @@ var renderoptionsapp = function renderoptionsapp() {
       { onClick: remove },
       "remove all"
     ),
+    numbers.map(function (number) {
+      return React.createElement(
+        "p",
+        { key: number },
+        "Number: ",
+        number
+      );
+    }),
     React.createElement(
       "ol",
       null,

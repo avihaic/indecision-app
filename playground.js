@@ -46,7 +46,7 @@ const rendercounterapp = () => {
     <button onClick={minusone}>-1</button>
     <button onClick={reset}>reset</button>
     </div>
-    );
+  );
 
     ReactDOM.render(templatetwo, appRoot)
 };

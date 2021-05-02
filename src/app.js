@@ -1,5 +1,5 @@
 console.log('app.js is running')
-
+//babel src/app.js --out-file=public/scripts/app.js --presets="env,react" --watch
 
 const app = {
   title: "indecision app",
@@ -31,6 +31,8 @@ const option = e.target.elements.option.value;
 
 const appRoot = document.getElementById('app');
 
+const numbers = [55,101,1000];
+
 const renderoptionsapp = () => {
 
   const template = (
@@ -41,6 +43,12 @@ const renderoptionsapp = () => {
     <p>{app.options.length}</p>
 
     <button  onClick={remove}>remove all</button>
+    {
+      numbers.map((number) => {
+      return <p key={number}>Number: {number}</p>
+      })
+    }
+    
     <ol>
       <li>first item</li>
       <li>secend item</li>
