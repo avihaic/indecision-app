@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-class IndecisionApp extends React.Component{
+class IndecisionApp extends React.Component {
   render(){
     const title = 'Indecision App';
     const subtitle = 'Put your life in computer hands';
@@ -10,7 +9,7 @@ class IndecisionApp extends React.Component{
       <Header title={title} subtitle={subtitle}/>
       <Action />
       <Options options={options}/>
-      <AddOption options={options}/>
+      <AddOption/>
     </div>
     );
   }
@@ -88,33 +87,3 @@ class AddOption extends React.Component{
 }
 
 ReactDOM.render(<IndecisionApp />,document.getElementById('app'));
-=======
-class Header extends React.Component{
-  render(){
-    return <p>this is from header</p>
-  }
-}
-
-class Options extends React.Component{
-  render(){
-    return <div>Options component here</div>
-  }
-}
-
-class AddOptions extends React.Component{
-  render(){
-    return <div>AddOptions component here</div>
-  }
-}
-
-const jsx = (
-  <div>
-    <h1>Title</h1>
-    <Header />
-    <Options />
-    <AddOptions />
-  </div>
-);
-
-ReactDOM.render(jsx,document.getElementById('app'));
->>>>>>> 0846f77c8b4559f2af6c33bf822695472df47d1b

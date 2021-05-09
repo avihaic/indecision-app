@@ -1,4 +1,4 @@
-console.log('app.js is running');
+/* console.log('app.js is running');
 
 let visibility = false;
 
@@ -21,4 +21,36 @@ const renderapp = () => {
     ReactDOM.render(template, appRoot);
 };
 
-renderapp();
+renderapp(); */
+
+class Visibilitytoggle extends React.Component{
+    constructor(props){
+        super(props);
+        this.showinfo = this.showinfo.bind(this);
+        this.state = {
+            visibility : false
+        };
+    }
+
+    showinfo()
+    {   
+        this.setState((prevState) => {
+            return{
+                    visibility : !prevState.visibility
+            };    
+        });
+        
+    }
+
+    render(){
+        return(
+        <div>
+            <h1>visibility toggle</h1>
+            <button onClick={this.showinfo}>{this.state.visibility ? 'hide info' : 'show info'}</button>
+            {this.state.visibility && (<div><p>Hey there are my info </p></div>)}
+        </div>
+        );
+    }
+}
+
+ReactDOM.render(<Visibilitytoggle />, document.getElementById('app'));
