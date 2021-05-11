@@ -38,6 +38,7 @@ class IndecisionApp extends React.Component {
     });
   };
 
+
   render(){
     const title = 'Indecision App';
     const subtitle = 'Put your life in computer hands';
@@ -49,11 +50,13 @@ class IndecisionApp extends React.Component {
       hasOption={this.state.options.length > 0}
       handlepick = {this.handlepick}
       />
+
       <Options
       options={this.state.options}
       handleDeleteOptions={this.handleDeleteOptions}
       />
       <AddOption handleaddOption={this.handleaddOption}/>
+
     </div>
     );
   }
