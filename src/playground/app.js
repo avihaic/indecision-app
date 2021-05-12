@@ -5,6 +5,8 @@ class IndecisionApp extends React.Component {
     this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
     this.handlepick = this.handlepick.bind(this);
     this.handleaddOption = this.handleaddOption.bind(this);
+    this.removeoption = this.removeoption.bind(this);
+
     this.state = {
      options : props.options
     }
@@ -38,6 +40,19 @@ class IndecisionApp extends React.Component {
     });
   };
 
+  handledeleteOption(){
+    console.log('aaaaaaaaa');
+/*     this.setState((prevState) => {
+      return{
+        deleteoptions:prevState.options.concat(option)
+      };
+    }); */
+  };
+
+  removeoption(){
+    console.log('click remove');
+  }
+
   render(){
     const subtitle = 'Put your life in computer hands';
     return (
@@ -47,13 +62,13 @@ class IndecisionApp extends React.Component {
       hasOption={this.state.options.length > 0}
       handlepick = {this.handlepick}
       />
+      <Btnremove removeoption={this.removeoption}/>
 
       <Options
       options={this.state.options}
       handleDeleteOptions={this.handleDeleteOptions}
       />
       <AddOption handleaddOption={this.handleaddOption}/>
-
     </div>
     );
   }
@@ -71,7 +86,7 @@ class IndecisionApp extends React.Component {
 } */
 
 IndecisionApp.defaultProps = {
-  options: []
+  options: [],
 }
 
 const Header = (props) => {
@@ -113,6 +128,14 @@ const Action = (props) => {
   ); 
 }
 
+const Btnremove = (props) => {
+  return (
+    <div>
+    <button onClick={props.removeoption}>Remove option</button>
+    </div> 
+  );
+}
+
 /* class Options extends React.Component{
   render(){
     return(
@@ -131,21 +154,26 @@ const Options = (props) => {
     <div>
     <button onClick={props.handleDeleteOptions}>Remove all</button>
     {
-       props.options.map((option,key) => <Option key={key} optionText={option}/>)
+       props.options.map((option,key) => <Option removeoption={props.removeoption} key={key} optionText={option}/>)
     }
     </div>
     );
 }
 
-/* class Option extends React.Component{
+
+/*  class Option extends React.Component{
     render(){
-      return  <div>{this.props.optionText}</div> 
+      return <div>
+      <input type='checkbox' name="checkbox" value={this.props.optionText}/>{this.props.optionText}
+      </div>
     }
-} */
+}  */
 
 const Option = (props) => {
-  return  <div>{props.optionText}</div> 
-}
+  return(
+    <div><input onClick={props.removeoption} type='checkbox' value={props.optionText}/>{props.optionText}</div>
+  );
+} 
 
 class AddOption extends React.Component{
   constructor(props){
