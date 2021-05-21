@@ -3,6 +3,7 @@ import AddOption from './AddOption';
 import Header from './Header';
 import Action from './Action';
 import Options from './Options';
+<<<<<<< HEAD
 import OptionModal from './OptionModal';
 
 export default class IndecisionApp extends React.Component {
@@ -47,6 +48,23 @@ handleCloseSelectedoption = () => {
 };
 
 componentDidMount = () => {
+=======
+
+export default class IndecisionApp extends React.Component {
+    constructor(props){
+      super(props);
+      this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
+      this.handlepick = this.handlepick.bind(this);
+      this.handleaddOption = this.handleaddOption.bind(this);
+      this.handleDeleteOption = this.handleDeleteOption.bind(this);
+  
+      this.state = {
+       options : props.options
+      };
+    }
+  
+  componentDidMount(){
+>>>>>>> a0125bf22fd19283106fe8a53a58a14587993d64
   try {
     const json = localStorage.getItem('options');
     const options = JSON.parse(json);
@@ -58,18 +76,61 @@ componentDidMount = () => {
   
     //do nothing al all
     }
+<<<<<<< HEAD
 }
   
 componentDidUpdate = (prevProps, prevState) => {
+=======
+  }
+  
+  componentDidUpdate(prevProps, prevState){
+>>>>>>> a0125bf22fd19283106fe8a53a58a14587993d64
     if(prevState.options.length !== this.state.options.length){
       const json = JSON.stringify(this.state.options);
       localStorage.setItem('options', json);
     }
+<<<<<<< HEAD
 }
   
 componentWillUnMount = () => {
     console.log('componentWillUnMount')
 }
+=======
+  }
+  
+  componentWillUnMount(){
+    console.log('componentWillUnMount')
+  }
+  
+  handleDeleteOptions(){
+      this.setState(() => ({ options: [] }));
+  };
+  
+  handleDeleteOption(optiontoremove){
+      console.log('hdo' , optiontoremove);
+      this.setState((prevState) => ({
+        options: prevState.options.filter((option) => {
+          return optiontoremove !== option;
+        })
+      }));
+  };
+  
+  handlepick(){
+      const randomnum = Math.floor(Math.random() * this.state.options.length);
+      const option = this.state.options[randomnum];
+      alert(option);
+  };
+  
+  handleaddOption(option){
+      if(!option) {
+        return 'enter valid value to add option'
+      } else if (this.state.options.indexOf(option) > -1) {
+        return 'this option already exits'
+      }
+  
+      this.setState((prevState) => ({  options:prevState.options.concat(option) }));
+  };
+>>>>>>> a0125bf22fd19283106fe8a53a58a14587993d64
   
     render(){
       const subtitle = 'Put your life in computer hands';
@@ -87,11 +148,21 @@ componentWillUnMount = () => {
         handleDeleteOption={this.handleDeleteOption}
         />
         <AddOption handleaddOption={this.handleaddOption}/>
+<<<<<<< HEAD
         <OptionModal selectedOption={this.state.selectedOption}
         handleCloseSelectedoption={this.handleCloseSelectedoption}
         />
+=======
+  
+>>>>>>> a0125bf22fd19283106fe8a53a58a14587993d64
       </div>
       );
     }
   }
   
+<<<<<<< HEAD
+=======
+IndecisionApp.defaultProps = {
+    options: []
+}
+>>>>>>> a0125bf22fd19283106fe8a53a58a14587993d64

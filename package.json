@@ -4,7 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+<<<<<<< HEAD
     "server": "live-server public/",
+=======
+>>>>>>> a0125bf22fd19283106fe8a53a58a14587993d64
     "build": "webpack",
     "dev-server": "webpack-dev-server"
   },
@@ -13,6 +16,7 @@
     "@babel/node": "^7.13.13",
     "babel-cli": "6.24.1",
     "babel-core": "6.25.0",
+<<<<<<< HEAD
     "babel-loader": "^7.1.5",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "1.5.2",
@@ -28,5 +32,17 @@
     "validator": "8.0.0",
     "webpack": "3.1.0",
     "webpack-dev-server": "^2.11.5"
+=======
+    "babel-loader": "7.1.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "1.5.2",
+    "babel-preset-react": "6.24.1",
+    "live-server": "^1.2.1",
+    "react": "16.0.0",
+    "react-dom": "16.0.0",
+    "validator": "8.0.0",
+    "webpack": "3.1.0",
+    "webpack-dev-server": "2.5.1"
+>>>>>>> a0125bf22fd19283106fe8a53a58a14587993d64
   }
 }

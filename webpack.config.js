@@ -11,6 +11,7 @@ output:{
            loader: 'babel-loader',
            test: /\.js$/,
            exclude:/node_modules/
+<<<<<<< HEAD
        },{
            test: /\.scss$/,
            use:[
@@ -18,6 +19,8 @@ output:{
               'css-loader',
               'sass-loader' 
            ]
+=======
+>>>>>>> a0125bf22fd19283106fe8a53a58a14587993d64
        }] 
     },
     devtool: 'cheap-module-eval-source-map',
