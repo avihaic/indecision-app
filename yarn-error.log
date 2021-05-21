@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\אביחי\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add babel-plugin-transform-class-propertiess
+  C:\Program Files\nodejs\node.exe C:\Users\אביחי\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add css-loader@0.28.4
 
 PATH: 
-  C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\אביחי\AppData\Local\Microsoft\WindowsApps;;C:\Users\אביחי\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\אביחי\AppData\Roaming\npm;%USERPROFILE%\AppData\Roaming\npm\
+  C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\אביחי\AppData\Local\Microsoft\WindowsApps;;C:\Users\אביחי\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\אביחי\AppData\Roaming\npm;%USERPROFILE%\AppData\Roaming\npm\;%USERPROFILE%\AppData\Local\Microsoft\WindowsApps
 
 Yarn version: 
   1.22.10
@@ -14,17 +14,12 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/babel-plugin-transform-class-propertiess: Not found
-      at Request.params.callback [as _callback] (C:\Users\אביחי\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66988:18)
-      at Request.self.callback (C:\Users\אביחי\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140662:22)
-      at Request.emit (node:events:369:20)
-      at Request.<anonymous> (C:\Users\אביחי\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141634:10)
-      at Request.emit (node:events:369:20)
-      at IncomingMessage.<anonymous> (C:\Users\אביחי\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141556:12)
-      at Object.onceWrapper (node:events:475:28)
-      at IncomingMessage.emit (node:events:381:22)
-      at endReadableNT (node:internal/streams/readable:1307:12)
-      at processTicksAndRejections (node:internal/process/task_queues:81:21)
+  SyntaxError: D:\react-course\indecision-app\package.json: Unexpected token < in JSON at position 109
+      at JSON.parse (<anonymous>)
+      at C:\Users\אביחי\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (C:\Users\אביחי\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:310:30)
+      at C:\Users\אביחי\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:321:13
 
 npm manifest: 
   {
@@ -33,6 +28,10 @@ npm manifest:
     "main": "index.js",
     "license": "MIT",
     "scripts": {
+  <<<<<<< HEAD
+      "server": "live-server public/",
+  =======
+  >>>>>>> a0125bf22fd19283106fe8a53a58a14587993d64
       "build": "webpack",
       "dev-server": "webpack-dev-server"
     },
@@ -41,7 +40,25 @@ npm manifest:
       "@babel/node": "^7.13.13",
       "babel-cli": "6.24.1",
       "babel-core": "6.25.0",
+  <<<<<<< HEAD
+      "babel-loader": "^7.1.5",
+      "babel-plugin-transform-class-properties": "^6.24.1",
+      "babel-preset-env": "1.5.2",
+      "babel-preset-react": "6.24.1",
+      "css-loader": "0.28.4",
+      "live-server": "^1.2.1",
+      "node-sass": "^6.0.0",
+      "react": "^16.14.0",
+      "react-dom": "^16.14.0",
+      "react-modal": "2.2.2",
+      "sass-loader": "6.0.6",
+      "style-loader": "0.18.2",
+      "validator": "8.0.0",
+      "webpack": "3.1.0",
+      "webpack-dev-server": "^2.11.5"
+  =======
       "babel-loader": "7.1.1",
+      "babel-plugin-transform-class-properties": "^6.24.1",
       "babel-preset-env": "1.5.2",
       "babel-preset-react": "6.24.1",
       "live-server": "^1.2.1",
@@ -50,6 +67,7 @@ npm manifest:
       "validator": "8.0.0",
       "webpack": "3.1.0",
       "webpack-dev-server": "2.5.1"
+  >>>>>>> a0125bf22fd19283106fe8a53a58a14587993d64
     }
   }
 
@@ -566,6 +584,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/babel-plugin-syntax-async-functions/-/babel-plugin-syntax-async-functions-6.13.0.tgz#cad9cad1191b5ad634bf30ae0872391e0647be95"
     integrity sha1-ytnK0RkbWtY0vzCuCHI5HgZHvpU=
   
+  babel-plugin-syntax-class-properties@^6.8.0:
+    version "6.13.0"
+    resolved "https://registry.yarnpkg.com/babel-plugin-syntax-class-properties/-/babel-plugin-syntax-class-properties-6.13.0.tgz#d7eb23b79a317f8543962c505b827c7d6cac27de"
+    integrity sha1-1+sjt5oxf4VDlixQW4J8fWysJ94=
+  
   babel-plugin-syntax-exponentiation-operator@^6.8.0:
     version "6.13.0"
     resolved "https://registry.yarnpkg.com/babel-plugin-syntax-exponentiation-operator/-/babel-plugin-syntax-exponentiation-operator-6.13.0.tgz#9ee7e8337290da95288201a6a57f4170317830de"
@@ -594,6 +617,16 @@ Lockfile:
       babel-helper-remap-async-to-generator "^6.24.1"
       babel-plugin-syntax-async-functions "^6.8.0"
       babel-runtime "^6.22.0"
+  
+  babel-plugin-transform-class-properties@^6.24.1:
+    version "6.24.1"
+    resolved "https://registry.yarnpkg.com/babel-plugin-transform-class-properties/-/babel-plugin-transform-class-properties-6.24.1.tgz#6a79763ea61d33d36f37b611aa9def81a81b46ac"
+    integrity sha1-anl2PqYdM9NvN7YRqp3vgagbRqw=
+    dependencies:
+      babel-helper-function-name "^6.24.1"
+      babel-plugin-syntax-class-properties "^6.8.0"
+      babel-runtime "^6.22.0"
+      babel-template "^6.24.1"
   
   babel-plugin-transform-es2015-arrow-functions@^6.22.0:
     version "6.22.0"
