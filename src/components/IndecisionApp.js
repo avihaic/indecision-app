@@ -1,234 +1,90 @@
 import React from 'react';
 import AddOption from './AddOption';
-import Header from './Header';
 import Action from './Action';
+import Header from './Header';
 import Options from './Options';
-<<<<<<< HEAD
-import OptionModal from './OptionModal';
-=======
-<<<<<<< HEAD
 import OptionModal from './OptionModal';
 
 export default class IndecisionApp extends React.Component {
-state = {
-    options : [],
-    SelectedOption:undefined
-}
-handleDeleteOptions = () => {
+  state = {
+    options: [],
+    selectedOption: undefined
+  };
+  handleDeleteOptions = () => {
     this.setState(() => ({ options: [] }));
-};
-
-handleDeleteOption = (optiontoremove) => {
-    console.log('hdo' , optiontoremove);
-    this.setState((prevState) => ({
-      options: prevState.options.filter((option) => {
-        return optiontoremove !== option;
-      })
-    }));
-};
-
-handlepick = () => {
-    const randomnum = Math.floor(Math.random() * this.state.options.length);
-    const option = this.state.options[randomnum];
-    this.setState(() => ({
-      selectedOption: option
-    }));
-};
-
-handleaddOption = (option) => {
-    if(!option) {
-      return 'enter valid value to add option'
-    } else if (this.state.options.indexOf(option) > -1) {
-      return 'this option already exits'
-    }
-
-    this.setState((prevState) => ({  options:prevState.options.concat(option) }));
-};
-
-handleCloseSelectedoption = () => {
- this.setState(() => ({ selectedOption: undefined }));
- //console.log('click')
-};
-
-componentDidMount = () => {
-=======
->>>>>>> 16e8a4196b07b767a52224560fac187fdd9e9b17
-
-export default class IndecisionApp extends React.Component {
-state = {
-    options : [],
-    SelectedOption:undefined
-}
-handleDeleteOptions = () => {
-    this.setState(() => ({ options: [] }));
-};
-
-handleDeleteOption = (optiontoremove) => {
-    console.log('hdo' , optiontoremove);
-    this.setState((prevState) => ({
-      options: prevState.options.filter((option) => {
-        return optiontoremove !== option;
-      })
-    }));
-};
-
-handlepick = () => {
-    const randomnum = Math.floor(Math.random() * this.state.options.length);
-    const option = this.state.options[randomnum];
-    this.setState(() => ({
-      selectedOption: option
-    }));
-};
-
-handleaddOption = (option) => {
-    if(!option) {
-      return 'enter valid value to add option'
-    } else if (this.state.options.indexOf(option) > -1) {
-      return 'this option already exits'
-    }
-<<<<<<< HEAD
-
-    this.setState((prevState) => ({  options:prevState.options.concat(option) }));
-};
-
-handleCloseSelectedoption = () => {
- this.setState(() => ({ selectedOption: undefined }));
- //console.log('click')
-};
-
-
-componentDidMount(){
-=======
-  
-  componentDidMount(){
->>>>>>> a0125bf22fd19283106fe8a53a58a14587993d64
->>>>>>> 16e8a4196b07b767a52224560fac187fdd9e9b17
-  try {
-    const json = localStorage.getItem('options');
-    const options = JSON.parse(json);
-  
-    if(options){
-      this.setState(() => ({ options }));
-    } 
-  } catch (e) {
-  
-    //do nothing al all
-    }
-<<<<<<< HEAD
-}
-  
-componentDidUpdate = (prevProps, prevState) => {
-=======
-<<<<<<< HEAD
-}
-  
-componentDidUpdate = (prevProps, prevState) => {
-=======
+  };
+  handleClearSelectedOption = () => {
+    this.setState(() => ({ selectedOption: undefined }));
   }
-  
-  componentDidUpdate(prevProps, prevState){
->>>>>>> a0125bf22fd19283106fe8a53a58a14587993d64
->>>>>>> 16e8a4196b07b767a52224560fac187fdd9e9b17
-    if(prevState.options.length !== this.state.options.length){
+  handleDeleteOption = (optionToRemove) => {
+    this.setState((prevState) => ({
+      options: prevState.options.filter((option) => optionToRemove !== option)
+    }));
+  };
+  handlePick = () => {
+    const randomNum = Math.floor(Math.random() * this.state.options.length);
+    const option = this.state.options[randomNum];
+    this.setState(() => ({
+      selectedOption: option
+    }));
+  };
+  handleAddOption = (option) => {
+    if (!option) {
+      return 'Enter valid value to add item';
+    } else if (this.state.options.indexOf(option) > -1) {
+      return 'This option already exists';
+    }
+
+    this.setState((prevState) => ({
+      options: prevState.options.concat(option)
+    }));
+  };
+  componentDidMount() {
+    try {
+      const json = localStorage.getItem('options');
+      const options = JSON.parse(json);
+
+      if (options) {
+        this.setState(() => ({ options }));
+      }
+    } catch (e) {
+      // Do nothing at all
+    }
+  }
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.options.length !== this.state.options.length) {
       const json = JSON.stringify(this.state.options);
       localStorage.setItem('options', json);
     }
-<<<<<<< HEAD
-}
-=======
-<<<<<<< HEAD
-}
-  
-componentWillUnMount = () => {
-    console.log('componentWillUnMount')
-}
-=======
   }
->>>>>>> 16e8a4196b07b767a52224560fac187fdd9e9b17
-  
-componentWillUnMount = () => {
-    console.log('componentWillUnMount')
-}
-  
-  handleDeleteOptions(){
-      this.setState(() => ({ options: [] }));
-  };
-  
-  handleDeleteOption(optiontoremove){
-      console.log('hdo' , optiontoremove);
-      this.setState((prevState) => ({
-        options: prevState.options.filter((option) => {
-          return optiontoremove !== option;
-        })
-      }));
-  };
-  
-  handlepick(){
-      const randomnum = Math.floor(Math.random() * this.state.options.length);
-      const option = this.state.options[randomnum];
-      alert(option);
-  };
-  
-  handleaddOption(option){
-      if(!option) {
-        return 'enter valid value to add option'
-      } else if (this.state.options.indexOf(option) > -1) {
-        return 'this option already exits'
-      }
-  
-      this.setState((prevState) => ({  options:prevState.options.concat(option) }));
-  };
->>>>>>> a0125bf22fd19283106fe8a53a58a14587993d64
-  
-    render(){
-      const subtitle = 'Put your life in computer hands';
-      return (
-        <div>
-        <Header subtitle={subtitle}/>
+  componentWillUnmount() {
+    console.log('componentWillUnmount');
+  }
+  render() {
+    const subtitle = 'Put your life in the hands of a computer';
+
+    return (
+      <div>
+        <Header subtitle={subtitle} />
         <div className="container">
           <Action
-          hasOption={this.state.options.length > 0}
-          handlepick = {this.handlepick}
+            hasOptions={this.state.options.length > 0}
+            handlePick={this.handlePick}
           />
           <Options
-          options={this.state.options}
-          handleDeleteOptions={this.handleDeleteOptions}
-          handleDeleteOption={this.handleDeleteOption}
+            options={this.state.options}
+            handleDeleteOptions={this.handleDeleteOptions}
+            handleDeleteOption={this.handleDeleteOption}
           />
-          <AddOption handleaddOption={this.handleaddOption}/>
+          <AddOption
+            handleAddOption={this.handleAddOption}
+          />
         </div>
-        <OptionModal selectedOption={this.state.selectedOption}
-        handleCloseSelectedoption={this.handleCloseSelectedoption}
+        <OptionModal
+          selectedOption={this.state.selectedOption}
+          handleClearSelectedOption={this.handleClearSelectedOption}
         />
-<<<<<<< HEAD
-=======
-  
-        <Options
-        options={this.state.options}
-        handleDeleteOptions={this.handleDeleteOptions}
-        handleDeleteOption={this.handleDeleteOption}
-        />
-        <AddOption handleaddOption={this.handleaddOption}/>
-<<<<<<< HEAD
-        <OptionModal selectedOption={this.state.selectedOption}
-        handleCloseSelectedoption={this.handleCloseSelectedoption}
-        />
-=======
-  
->>>>>>> a0125bf22fd19283106fe8a53a58a14587993d64
->>>>>>> 16e8a4196b07b767a52224560fac187fdd9e9b17
       </div>
-      );
-    }
+    );
   }
-  
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-=======
-IndecisionApp.defaultProps = {
-    options: []
 }
->>>>>>> a0125bf22fd19283106fe8a53a58a14587993d64
->>>>>>> 16e8a4196b07b767a52224560fac187fdd9e9b17
