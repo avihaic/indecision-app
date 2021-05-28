@@ -6,7 +6,11 @@
   color: white;
   font-weight: bold;
   font-size: $l-size;
+<<<<<<< HEAD
   margin-bottom: $m-size;
+=======
+  margin-bottom: $xl-size;
+>>>>>>> ad7d756867377c69086a5aba3c12866ea90a448b
   padding: 2.4rem;
   width: 100%;
 }
@@ -31,9 +35,12 @@
   color: $off-white;
   padding: 0;
 }
+<<<<<<< HEAD
 
 @media (min-width: $desktop-breakpoint) {
   .big-button {
     margin-bottom: $xl-size;
   }
 }
+=======
+>>>>>>> ad7d756867377c69086a5aba3c12866ea90a448b

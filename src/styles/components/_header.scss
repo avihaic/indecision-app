@@ -1,7 +1,11 @@
 .header {
   background: $off-black;
   color: white;
+<<<<<<< HEAD
   margin-bottom: $m-size;
+=======
+  margin-bottom: $xl-size;
+>>>>>>> ad7d756867377c69086a5aba3c12866ea90a448b
   padding: $m-size 0;
 }
 
@@ -16,9 +20,12 @@
   font-weight: 500;
   margin: 0;
 }
+<<<<<<< HEAD
 
 @media (min-width: $desktop-breakpoint) {
   .header {
     margin-bottom: $xl-size;
   }
 }
+=======
+>>>>>>> ad7d756867377c69086a5aba3c12866ea90a448b
