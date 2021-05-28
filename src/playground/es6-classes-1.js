@@ -1,57 +1,53 @@
 class Person {
-    constructor (name = 'anonymous',age = 0){
-        this.name = name;
-        this.age = age;
-    }
-    getgretting(){
-        return `hi. i am ${this.name}`;
-    }
-    getdescription(){
-        return `${this.name} is ${this.age} year(s) old`;
-    }
+  constructor(name = 'Anonymous', age = 0) {
+    this.name = name;
+    this.age = age;
+  }
+  getGreeting() {
+    return `Hi. I am ${this.name}!`;
+  }
+  getDescription() {
+    return `${this.name} is ${this.age} year(s) old.`;
+  }
 }
 
 class Student extends Person {
-    constructor(name,age,major){
-        super(name,age);
-        this.major = major;
+  constructor(name, age, major) {
+    super(name, age);
+    this.major = major;
+  }
+  hasMajor() {
+    return !!this.major;
+  }
+  getDescription() {
+    let description = super.getDescription();
+
+    if (this.hasMajor()) {
+      description += ` Their major is ${this.major}.`;
     }
-    hasmajor(){
-        return !!this.major;
-    }
-    getdescription(){
-       let description = super.getdescription();
-       if(this.major){
-           description += ` ${this.major}`;
-       }
-       return description;  
-    }
+
+    return description;
+  }
 }
 
 class Traveler extends Person {
-    constructor(name,age,home){
-        super(name,age);
-        this.home = home;
+  constructor(name, age, homeLocation) {
+    super(name, age);
+    this.homeLocation = homeLocation;
+  }
+  getGreeting() {
+    let greeting = super.getGreeting();
+
+    if (this.homeLocation) {
+      greeting += ` I am visiting from ${this.homeLocation}.`;
     }
-    getgretting(){
-        let gretting = super.getgretting();
-        if(this.home){
-            gretting += ` I am visiting from ${this.home}`
-        }
-        return gretting;
-    }
+
+    return greeting;
+  }
 }
 
+const me = new Traveler('Andrew Mead', 26, 'Philadelphia');
+console.log(me.getGreeting());
 
-const me = new Traveler('avihai cohen',38,'beer sheva');
-console.log(me.getgretting());
-
-const other = new Traveler();
-console.log(other.getgretting());
-
-
-
-
-
-
-
+const other = new Traveler(undefined, undefined, 'Nowhere');
+console.log(other.getGreeting());
